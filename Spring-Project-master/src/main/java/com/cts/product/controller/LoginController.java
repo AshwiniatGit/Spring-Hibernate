@@ -31,7 +31,7 @@ public class LoginController {
 	if(loginService.authenticateUser(login)>=1)
 	{
 		
-		modelAndView.setViewName("addProduct");
+		modelAndView.setViewName("admin");
 	}
 	else
 	{

@@ -39,7 +39,7 @@ public class Product {
 		this.productName = productName;
 	}
 
-
+	@Column
 	public String getPrice() {
 		return price;
 	}
@@ -49,7 +49,7 @@ public class Product {
 		this.price = price;
 	}
 
-
+	@Column
 	public String getQuantity() {
 		return quantity;
 	}
@@ -60,6 +60,13 @@ public class Product {
 	}
 
 
+	public Product(String productId, String productName, String price, String quantity) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.price = price;
+		this.quantity = quantity;
+	}
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price + ", quantity="

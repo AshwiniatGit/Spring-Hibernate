@@ -5,9 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin</title>
+<a href="viewProduct.html">View Product</a>
 <a href="addProduct.html">Add Product</a>
-<a href="addProduct.html">Delete Product</a>
-<a href="addProduct.html">Update Product</a>
+<a href="deleteProduct.html">Delete Product</a>
+<a href="updateProduct.html">Update Product</a>
 </head>
 <body>
 

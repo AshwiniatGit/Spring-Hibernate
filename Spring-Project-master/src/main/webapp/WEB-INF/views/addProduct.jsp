@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Product Name:</label>
-                  <input type="text" class="form-control" name="name" minlength="8" maxlength="20">
+                  <input type="text" class="form-control" name="productName" minlength="8" maxlength="20">
                 </div>
 
                 <div class="form-group">

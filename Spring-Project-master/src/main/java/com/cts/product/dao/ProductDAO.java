@@ -11,4 +11,5 @@ public interface ProductDAO {
 	public Product findProduct(String id);
 	public String deleteProduct(String productId);
 	public List<Product> filterProducts(String query);
+	public String updateProduct(Product product);
 }

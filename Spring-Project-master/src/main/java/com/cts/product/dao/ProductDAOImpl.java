@@ -2,6 +2,9 @@ package com.cts.product.dao;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -9,10 +12,12 @@ import org.springframework.stereotype.Repository;
 import com.cts.product.bean.Product;
 
 @Repository
+@Transactional
 public class ProductDAOImpl implements ProductDAO{
 
 	 @Autowired
-	 private SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
+	 
 	public String addProduct(Product product) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(product);
@@ -21,7 +26,9 @@ public class ProductDAOImpl implements ProductDAO{
 
 	public List<Product> getAllProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		 TypedQuery<Product> query = sessionFactory.getCurrentSession().createQuery("from Product");
+		 
+	      return query.getResultList();
 	}
 
 	public Product findProduct(String id) {
@@ -30,13 +37,21 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	public String deleteProduct(String productId) {
-		// TODO Auto-generated method stub
-		return null;
+		Product product = sessionFactory.getCurrentSession().load(Product.class, productId);
+		sessionFactory.getCurrentSession().delete(product);
+		return "success";
 	}
 
 	public List<Product> filterProducts(String query) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(product);
+		return "success";
 	}
 
 }
